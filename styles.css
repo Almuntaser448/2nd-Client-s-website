@@ -1,0 +1,312 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #333; /* Dark background color */
+  }
+
+
+/* Navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+.navbar-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center; /* Center menu items vertically */
+}
+
+.navbar-menu ul li {
+  margin-right: 20px;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Initially positioned slightly below */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.navbar-menu ul li:last-child {
+  margin-right: 0;
+}
+
+.navbar-menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-height: 50px; /* Adjust as needed */
+  margin-right: 20px; /* Adjust space between logo and menu items */
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none; /* Initially hidden */
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+}
+
+/* Animation for menu text */
+.navbar-menu ul li {
+  opacity: 1; /* Show the menu item */
+  transform: translateY(0); /* Move the menu item to its original position */
+}
+
+
+
+
+
+
+/* Hide all slides by default */
+.slide {
+  display: none;
+  position: relative;
+  overflow: hidden; /* Crop the height of the images */
+}
+
+/* Center the text vertically and horizontally */
+.text {
+  position: absolute;
+  top: 50%; /* Initially position the text at the center vertically */
+  left: 50%;
+  transform: translate(-50%, 50%); /* Initially position the text at the center horizontally */
+  color: white;
+  text-align: center;
+  font-size: 24px; /* Set the font size to be larger */
+  opacity: 0; /* Initially hide the text */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Add transition for smooth animation */
+}
+
+.slide.active .text {
+  transform: translate(-50%, -50%); /* Move the text to the center */
+  opacity: 1; /* Make the text visible */
+}
+
+.slide-image {
+  width: 100%;
+  height: auto; /* Ensure images maintain aspect ratio */
+  object-fit: cover; /* Cover the entire slide while maintaining aspect ratio */
+  max-height: 80vh; /* Set a maximum height for the slide as a percentage of the viewport height */
+}
+
+/* Fade animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+  
+  /* Styles for two-column-section */
+  .two-column-section {
+    text-align: center;
+  }
+  
+  .section-title {
+    color: white;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .column {
+    flex: 0 0 50%; /* Each column takes 50% of the width */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .column img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+  }
+  
+  .text {
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 18px;
+  }
+  
+  .column:hover img {
+    transform: scale(1.1); /* Zoom effect on hover */
+  }
+  
+  /* Styles for full-width-section */
+  .full-width-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+  }
+  
+  .black-square {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    display: none; /* Initially hidden */
+  }
+  
+  .tiny-circle {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+  }
+  
+  .text {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+  
+  .animate {
+    animation: zoom-out 1s ease forwards, fade-in 1s ease forwards;
+  }
+  
+  @keyframes zoom-out {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Styles for contact-section */
+  .contact-section {
+    text-align: center;
+  }
+  
+  .contact-form {
+    max-width: 400px; /* Adjust as needed */
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    color: white;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .send-button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .send-button:hover {
+    background-color: darkred;
+  }
+  
+  /* Styles for contact-center */
+  .contact-center {
+    text-align: center;
+    color: white;
+    background-color: #333; /* Dark background color */
+    padding: 20px 0;
+  }
+  
+  .contact-item {
+    margin-bottom: 10px;
+  }
+  
+  .contact-item i {
+    margin-right: 10px;
+  }
+  
+  .contact-item span {
+    font-size: 16px;
+  }
+  /* General styles */
+
+/* Add these styles for small screen sizes (up to 768px) */
+@media only screen and (max-width: 768px) {
+  .two-column-section .column {
+    flex: 0 0 100%; /* Each column takes 100% of the width */
+  }
+}
+
+/* Add these styles for extra small screen sizes (up to 576px) */
+@media only screen and (max-width: 576px) {
+  .contact-form {
+    max-width: 90%; /* Adjust as needed */
+  }
+}
