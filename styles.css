@@ -93,7 +93,8 @@ body {
   transform: translate(-50%, 50%); /* Initially position the text at the center horizontally */
   color: white;
   text-align: center;
-  font-size: 24px; /* Set the font size to be larger */
+  font-weight:800;
+  font-size: 50px; /* Set the font size to be larger */
   opacity: 0; /* Initially hide the text */
   transition: transform 0.5s ease, opacity 0.5s ease; /* Add transition for smooth animation */
 }
@@ -102,6 +103,7 @@ body {
   transform: translate(-50%, -50%); /* Move the text to the center */
   opacity: 1; /* Make the text visible */
 }
+
 
 .slide-image {
   width: 100%;
@@ -158,7 +160,7 @@ body {
     transition: transform 0.5s ease;
   }
   
-  .text {
+  .textb   {
     position: absolute;
     bottom: 20px; /* Adjust as needed */
     left: 50%;
@@ -170,6 +172,10 @@ body {
   .column:hover img {
     transform: scale(1.1); /* Zoom effect on hover */
   }
+  
+
+
+
   
   /* Styles for full-width-section */
   .full-width-section {
@@ -206,7 +212,7 @@ body {
     border-radius: 50%;
   }
   
-  .text {
+  .texta {
     font-size: 14px;
     margin-left: 5px;
   }
